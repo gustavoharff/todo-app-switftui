@@ -22,7 +22,7 @@ struct FormView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationTitle("Create task")
+            .navigationTitle(formViewModel.updateItem == nil ? "Create task" : "Update task")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 
@@ -43,10 +43,13 @@ struct FormView: View {
                     }, label: {
                         Text("Cancel")
                     })
-                    
                 }
             }
         }
+        .onAppear(perform: {
+            formViewModel.setUpInitialData()
+        })
+        .onDisappear(perform: formViewModel.deInitData)
     }
 }
 

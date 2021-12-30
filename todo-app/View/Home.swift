@@ -26,6 +26,24 @@ struct Home: View {
                         .padding(10)
                         .background(Color.gray.opacity(0.15))
                         .cornerRadius(10)
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .contextMenu(menuItems: {
+                            
+                            Button(action: {
+                                formViewModel.deleteItem(item: item)
+                            }, label: {
+                                
+                                Text("Delete Item")
+                            })
+                            
+                            Button(action: {
+                                formViewModel.updateItem = item
+                                formViewModel.formOpen.toggle()
+                            }, label: {
+                                
+                                Text("Edit Item")
+                            })
+                        })
                     }
                 }
                 .padding()
@@ -36,7 +54,8 @@ struct Home: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
                     Button(action: {
-                        formViewModel.openNewForm.toggle()
+                        formViewModel.updateItem = nil
+                        formViewModel.formOpen.toggle()
                     }) {
                         
                         Image(systemName: "plus")
@@ -44,7 +63,7 @@ struct Home: View {
                     }
                 }
             }
-            .sheet(isPresented: $formViewModel.openNewForm, content: {
+            .sheet(isPresented: $formViewModel.formOpen, content: {
                 FormView()
                     .environmentObject(formViewModel)
             })

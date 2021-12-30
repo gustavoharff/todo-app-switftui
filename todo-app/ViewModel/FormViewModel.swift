@@ -16,7 +16,9 @@ class FormViewModel: ObservableObject {
     
     @Published var items: [Item] = []
     
-    @Published var openNewForm = false
+    @Published var formOpen = false
+    
+    @Published var updateItem: Item?
     
     init() {
         getItems()
@@ -34,19 +36,53 @@ class FormViewModel: ObservableObject {
     
     func addItem(presentation: Binding<PresentationMode>) {
         
-        let item = Item()
-        item.title = title
-        item.done = done
-        
         guard let realm = try? Realm() else { return }
         
         try? realm.write {
             
-            realm.add(item)
+            guard let availableObject = updateItem else {
+                let item = Item()
+                item.title = title
+                item.done = done
+                
+                realm.add(item)
+                
+                return;
+            }
+            
+            availableObject.title = title
+            availableObject.done = done
+        }
+        
+        getItems()
+        
+        presentation.wrappedValue.dismiss()
+    }
+    
+    func deleteItem(item: Item) {
+        
+        guard let realm = try? Realm() else { return }
+        
+        try? realm.write {
+            realm.delete(item)
             
             getItems()
         }
         
-        presentation.wrappedValue.dismiss()
+    }
+    
+    func setUpInitialData() {
+        
+        guard let updateData = updateItem else { return }
+        
+        id = updateData.id
+        title = updateData.title
+        done = updateData.done
+    }
+    
+    func deInitData() {
+        
+        title = ""
+        done = false
     }
 }
