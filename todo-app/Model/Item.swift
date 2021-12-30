@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Item: ObservableObject {
-    @Published var id = UUID()
-    @Published var title = ""
-    @Published var done = false
+class Item: Object, Identifiable {
+    @objc dynamic var id = UUID()
+    @objc dynamic var title = ""
+    @objc dynamic var done = false
 }

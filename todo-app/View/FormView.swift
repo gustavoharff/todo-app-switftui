@@ -28,7 +28,9 @@ struct FormView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        formViewModel.addItem(presentation: presentation)
+                    }, label: {
                         Text("Done")
                     })
                     

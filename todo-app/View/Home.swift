@@ -15,13 +15,30 @@ struct Home: View {
             
             ScrollView {
                 
+                VStack(spacing: 15) {
+                    
+                    ForEach(formViewModel.items) { item in
+                        
+                        VStack(alignment: .leading, spacing: 10, content: {
+                            Text(item.title)
+                        })
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(10)
+                        .background(Color.gray.opacity(0.15))
+                        .cornerRadius(10)
+                    }
+                }
+                .padding()
             }
             .navigationTitle("To-Do")
             .toolbar {
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    
                     Button(action: {
                         formViewModel.openNewForm.toggle()
                     }) {
+                        
                         Image(systemName: "plus")
                             .font(.title2)
                     }
