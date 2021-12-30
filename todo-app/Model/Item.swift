@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Item: Identifiable {
-    var id = UUID()
-    var title: String
-    var done: Bool
+class Item: ObservableObject {
+    @Published var id = UUID()
+    @Published var title = ""
+    @Published var done = false
 }

@@ -9,15 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            HeaderView()
-            
-            Spacer()
-            
-            ListView()
-            
-            Spacer()
-        }
+        Home()
     }
 }
 

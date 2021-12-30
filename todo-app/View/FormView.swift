@@ -8,13 +8,43 @@
 import SwiftUI
 
 struct FormView: View {
-    @State private var title = ""
+    @EnvironmentObject var formViewModel: FormViewModel
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        VStack(alignment: .leading) {
-            TextField("Enter a title", text: $title)
+        NavigationView {
+            
+            List {
+                
+                Section(header: Text("Title")) {
+                    
+                    TextField("", text: $formViewModel.title)
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .navigationTitle("Create task")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Button(action: {}, label: {
+                        Text("Done")
+                    })
+                    
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    
+                    Button(action: {
+                        presentation.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Cancel")
+                    })
+                    
+                }
+            }
         }
-        .padding()
     }
 }
 
