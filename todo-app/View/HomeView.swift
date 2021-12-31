@@ -1,5 +1,5 @@
 //
-//  Home.swift
+//  HomeView.swift
 //  todo-app
 //
 //  Created by Gustavo Harff on 30/12/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeView: View {
     @StateObject var formViewModel = FormViewModel()
     
     var body: some View {
@@ -72,8 +72,8 @@ struct Home: View {
     }
 }
 
-struct Home_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
 }

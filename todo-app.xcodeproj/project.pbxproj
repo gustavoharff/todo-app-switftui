@@ -16,7 +16,7 @@
 		60A99FBB277D0E9500A4BC5B /* todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A99FBA277D0E9500A4BC5B /* todo_appUITestsLaunchTests.swift */; };
 		60A99FD1277D277400A4BC5B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A99FD0277D277400A4BC5B /* Item.swift */; };
 		60A99FD3277D39BF00A4BC5B /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A99FD2277D39BF00A4BC5B /* FormView.swift */; };
-		60B4D67C277DECC000868B31 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B4D67B277DECC000868B31 /* Home.swift */; };
+		60B4D67C277DECC000868B31 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B4D67B277DECC000868B31 /* HomeView.swift */; };
 		60B4D681277DEF7800868B31 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B4D680277DEF7800868B31 /* FormViewModel.swift */; };
 		60B4D684277DF37700868B31 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 60B4D683277DF37700868B31 /* Realm */; };
 		60B4D686277DF37700868B31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 60B4D685277DF37700868B31 /* RealmSwift */; };
@@ -52,7 +52,7 @@
 		60A99FBA277D0E9500A4BC5B /* todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		60A99FD0277D277400A4BC5B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		60A99FD2277D39BF00A4BC5B /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-		60B4D67B277DECC000868B31 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		60B4D67B277DECC000868B31 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		60B4D680277DEF7800868B31 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				60A99FD2277D39BF00A4BC5B /* FormView.swift */,
-				60B4D67B277DECC000868B31 /* Home.swift */,
+				60B4D67B277DECC000868B31 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				60A99FD1277D277400A4BC5B /* Item.swift in Sources */,
 				60A99FA0277D0E9400A4BC5B /* ContentView.swift in Sources */,
 				60A99F9E277D0E9400A4BC5B /* todo_appApp.swift in Sources */,
-				60B4D67C277DECC000868B31 /* Home.swift in Sources */,
+				60B4D67C277DECC000868B31 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
